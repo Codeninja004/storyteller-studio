@@ -104,7 +104,7 @@ const Contact = () => {
                   <Mail className="text-primary mt-1 shrink-0" size={18} />
                   <div>
                     <span className="text-xs tracking-widest uppercase text-muted-foreground block mb-1">Email</span>
-                    <span className="text-foreground text-sm">hello@novaframe.studio</span>
+                    <span className="text-foreground text-sm">hello@ensmedia.studio</span>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">

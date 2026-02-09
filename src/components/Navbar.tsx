@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import ensLogo from "@/assets/ens-logo.png";
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -17,8 +18,8 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50">
       <div className="absolute inset-0 bg-background/80 backdrop-blur-md border-b border-border/30" />
       <div className="relative max-w-7xl mx-auto flex items-center justify-between px-6 md:px-12 py-4">
-        <Link to="/" className="font-display text-2xl md:text-3xl tracking-wider text-foreground">
-          NOVA<span className="text-gradient">FRAME</span>
+        <Link to="/" className="flex items-center gap-3">
+          <img src={ensLogo} alt="ENS" className="h-8 md:h-10 w-auto" />
         </Link>
 
         {/* Desktop */}

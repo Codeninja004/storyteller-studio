@@ -67,7 +67,7 @@ const About = () => {
             <SectionHeading label="Our Story" title="WHO WE ARE" />
             <div className="space-y-4 text-muted-foreground text-sm md:text-base leading-relaxed">
               <p>
-                NovaFrame Studios is a full-service media production company based in Los Angeles.
+                ENS Media is a full-service media production company based in Los Angeles.
                 We specialize in creating cinematic content that moves audiences — from brand campaigns
                 and documentaries to live broadcasts and corporate media.
               </p>

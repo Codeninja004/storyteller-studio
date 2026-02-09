@@ -106,7 +106,7 @@ const Index = () => {
             <SectionHeading
               label="Who We Are"
               title="CRAFTED WITH VISION"
-              description="NovaFrame is a creative media studio driven by a passion for visual storytelling. We combine technical precision with artistic vision to produce content that captivates and inspires."
+              description="ENS is a creative media studio driven by a passion for visual storytelling. We combine technical precision with artistic vision to produce content that captivates and inspires."
             />
             <Link
               to="/about"
