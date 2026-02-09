@@ -16,7 +16,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50">
-      <div className="absolute inset-0 bg-background/80 backdrop-blur-md border-b border-border/30" />
+      <div className="absolute inset-0 bg-background/90 backdrop-blur-md border-b border-border/50" />
       <div className="relative max-w-7xl mx-auto flex items-center justify-between px-6 md:px-12 py-4">
         <Link to="/" className="flex items-center gap-3">
           <img src={ensLogo} alt="ENS" className="h-8 md:h-10 w-auto" />
@@ -63,7 +63,7 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-background/98 backdrop-blur-xl z-40 flex flex-col items-center justify-center gap-8 md:hidden"
+            className="fixed inset-0 bg-background/98 z-40 flex flex-col items-center justify-center gap-8 md:hidden"
           >
             {navLinks.map((link) => (
               <Link

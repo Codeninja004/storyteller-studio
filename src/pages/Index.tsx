@@ -38,7 +38,7 @@ const Index = () => {
         <div className="absolute inset-0">
           <img src={heroBg} alt="Production studio" className="w-full h-full object-cover" />
           <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
-          <div className="absolute inset-0 bg-background/40" />
+          <div className="absolute inset-0 bg-background/50" />
         </div>
         <div className="relative z-10 section-padding pb-24 md:pb-32 w-full max-w-7xl mx-auto">
           <motion.div
@@ -85,7 +85,7 @@ const Index = () => {
                 alt={project.title}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+              <div className="absolute inset-0 bg-background/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
                 <span className="text-xs tracking-[0.3em] uppercase text-primary">{project.category}</span>
                 <span className="font-display text-2xl text-foreground mt-1">{project.title}</span>
               </div>
