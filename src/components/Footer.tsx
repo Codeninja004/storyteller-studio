@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import ensLogo from "@/assets/ens-logo.png";
+import ensLogo from "@/assets/ens.png";
 
 const Footer = () => {
   return (
