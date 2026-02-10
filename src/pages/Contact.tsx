@@ -18,7 +18,7 @@ const Contact = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <section className="relative pt-32 pb-20 section-padding">
+      <section className="relative pt-32 pb-20 section-padding text-center">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -26,13 +26,15 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
           >
             <span className="font-body text-xs tracking-[0.4em] uppercase text-primary mb-4 block">Contact</span>
-            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-foreground leading-[0.9] max-w-4xl">
+            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-foreground leading-[0.9] ">
               LET'S <span className="text-gradient">WORK</span><br />
               TOGETHER
             </h1>
-            <p className="mt-6 text-muted-foreground text-base md:text-lg max-w-lg leading-relaxed">
-              Have a project in mind? We'd love to hear about it. Reach out and let's create something extraordinary.
-            </p>
+            <div className="flex justify-center items-center">
+              <p className="mt-6 text-muted-foreground text-base md:text-lg max-w-lg leading-relaxed">
+                Have a project in mind? We'd love to hear about it. Reach out and let's create something extraordinary.
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>

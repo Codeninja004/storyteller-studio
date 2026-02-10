@@ -14,8 +14,7 @@ const SectionHeading = ({ label, title, description, align = "left" }: SectionHe
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.7 }}
-      className={`mb-12 md:mb-16 ${align === "center" ? "text-center" : ""}`}
-    >
+      className={`⁠mb-12 md:mb-16 ${align === "center" ? "text-center" : ""}`}>
       {label && (
         <span className="font-body text-xs tracking-[0.3em] uppercase text-primary mb-3 block">
           {label}
@@ -25,9 +24,11 @@ const SectionHeading = ({ label, title, description, align = "left" }: SectionHe
         {title}
       </h2>
       {description && (
+        <div className="flex justify-center items-center">
         <p className="mt-4 text-muted-foreground text-base md:text-lg max-w-2xl leading-relaxed">
           {description}
         </p>
+        </div>
       )}
     </motion.div>
   );

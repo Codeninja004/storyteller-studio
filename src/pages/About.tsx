@@ -5,6 +5,20 @@ import Footer from "@/components/Footer";
 import SectionHeading from "@/components/SectionHeading";
 import project1 from "@/assets/project-1.jpg";
 import project5 from "@/assets/project-5.jpg";
+import heroBg from "@/assets/hero-bg.jpg";
+import entity from "@/assets/entity.jpg";
+import garena from "@/assets/garena.jpg";
+import intel from "@/assets/intel.webp";
+import alienware from "@/assets/alienware.png";
+import krafton from "@/assets/krafton(bgmi).png";
+import samsung from "@/assets/samsung.png";
+import oneplus from "@/assets/oneplus.png";
+import riot from "@/assets/riot.jpg";
+import iqoo from "@/assets/Iqoo.png";
+import flipkart from "@/assets/Flipkart.webp";
+import playstation from "@/assets/Playstation.jpg";
+import acer from "@/assets/Acer.jpg";
+import lenovo from "@/assets/Lenovo.png";
 
 const capabilities = [
   { icon: Film, title: "Video Production", desc: "End-to-end film and video production, from scripting and storyboarding to on-set direction and final delivery." },
@@ -16,31 +30,59 @@ const capabilities = [
 ];
 
 const clients = [
-  "National Geographic", "Red Bull Media", "Sony Pictures",
-  "Warner Bros.", "Nike", "Adidas",
-  "BBC Studios", "Netflix", "Paramount",
-  "ESPN", "Discovery", "HBO",
+  entity, garena, intel, alienware, krafton, samsung, oneplus, riot, iqoo, flipkart, playstation, acer, lenovo
 ];
 
 const About = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-
-      {/* Hero */}
-      <section className="relative pt-32 pb-20 section-padding overflow-hidden">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative h-screen flex items-center overflow-hidden text-center">
+        <div className="absolute inset-0">
+          <img src={heroBg} alt="Production studio" className="w-full h-full object-cover" />
+          <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
+          <div className="absolute inset-0 bg-background/50" />
+        </div>
+        <div className="relative z-10 section-padding md:pb-32 w-full max-w-7xl mx-auto ">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1, delay: 0.3 }}
           >
             <span className="font-body text-xs tracking-[0.4em] uppercase text-primary mb-4 block">About Us</span>
-            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-foreground leading-[0.9] max-w-4xl">
+            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-foreground leading-[0.9] ">
               BUILT ON <span className="text-gradient">CRAFT</span>,<br />
               DRIVEN BY VISION
             </h1>
           </motion.div>
+        </div>
+      </section>
+
+
+      {/* Clients */}
+      <section className="section-padding">
+        <div className="max-w-7xl mx-auto">
+          <SectionHeading
+            label="Clients"
+            title="TRUSTED BY LEADING BRANDS"
+            description="We've had the privilege of working with world-class organizations across media, entertainment, and corporate sectors."
+            align="center"
+          />
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {clients.map((client, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.05 }}
+                className="glass-card py-5 px-3 flex items-center justify-center"
+              >
+                <img src={client} alt="Behind the scenes" className="w-full h-20 object-cover" />
+
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -64,7 +106,7 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <SectionHeading label="Our Story" title="WHO WE ARE" />
+            <SectionHeading label="Our Story" title="WHO WE ARE?" />
             <div className="space-y-4 text-muted-foreground text-sm md:text-base leading-relaxed">
               <p>
                 ENS Media is a full-service media production company based in Los Angeles.
@@ -90,7 +132,7 @@ const About = () => {
         <div className="max-w-7xl mx-auto">
           <SectionHeading
             label="Capabilities"
-            title="WHAT WE DO"
+            title="WHAT WE DO?"
             description="From initial concept to final delivery, we offer a comprehensive suite of production and broadcast services."
             align="center"
           />
@@ -113,31 +155,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Clients */}
-      <section className="section-padding">
-        <div className="max-w-7xl mx-auto">
-          <SectionHeading
-            label="Clients"
-            title="TRUSTED BY LEADING BRANDS"
-            description="We've had the privilege of working with world-class organizations across media, entertainment, and corporate sectors."
-            align="center"
-          />
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {clients.map((client, i) => (
-              <motion.div
-                key={client}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.05 }}
-                className="glass-card py-6 px-4 flex items-center justify-center"
-              >
-                <span className="font-display text-lg tracking-wider text-muted-foreground">{client}</span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* Image break */}
       <section className="relative h-[50vh] overflow-hidden">

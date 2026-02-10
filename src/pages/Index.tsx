@@ -1,31 +1,30 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Film, Radio, Tv, Camera } from "lucide-react";
+import { ArrowRight, Film, Radio, Tv, Camera, Dot, DotIcon } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SectionHeading from "@/components/SectionHeading";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/hero-bg.jpeg";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
-import project4 from "@/assets/project-4.jpg";
-import project5 from "@/assets/project-5.jpg";
 import project6 from "@/assets/project-6.jpg";
+import ClientCarousel from "@/components/ClientCarousel";
+import CTABanner from "@/components/CTABanner";
 
 const projects = [
-  { img: project1, title: "Brand Campaign", category: "Commercial" },
-  { img: project2, title: "Live Broadcast", category: "Broadcasting" },
-  { img: project3, title: "Aerial Documentary", category: "Documentary" },
-  { img: project4, title: "Post-Production Suite", category: "Post-Production" },
-  { img: project5, title: "Stage Production", category: "Event Coverage" },
-  { img: project6, title: "Studio Session", category: "Film Production" },
+  { img: project1, title: "Campus Tours & Brand Activations", client: "Lenovo · Krafton (BGMI) · PlayStation · Garena (Free Fire)", description: "We design and execute high-impact college campus tours and on-ground brand activations, creating immersive gaming and engagement experiences that connect brands directly with young audiences." },
+  { img: project2, title: "Production & Live Broadcasting", client: "OnePlus · iQOO · Samsung", description: "We deliver end-to-end production and live broadcasting for esports, LAN and similar events, managing everything from pre-event planning and technical setup to multi-camera production and real-time streaming. Our team ensures seamless execution, broadcast-quality visuals, and reliable live streams across digital platforms." },
+  { img: project3, title: "Casting & Live Commentary", client: "Acer · Samsung · Alienware · Intel · Flipkart · Entity", description: "We provide professional casting and live commentary for esports tournaments, product launch and branded streams, delivering energetic storytelling, in-depth gameplay analysis, and real-time audience engagement that elevates the viewing experience." },
 ];
 
 const services = [
-  { icon: Film, title: "Video Production", desc: "Cinematic storytelling from concept to final cut." },
-  { icon: Radio, title: "Live Broadcasting", desc: "Multi-camera live coverage for any scale." },
-  { icon: Tv, title: "Post-Production", desc: "Color grading, VFX, and editorial finishing." },
-  { icon: Camera, title: "Event Coverage", desc: "Full-service capture for events worldwide." },
+  { title: "Casting", desc: "We provide professional esports casting for gaming streams, tournaments, and live events, delivering high-energy commentary that enhances gameplay, engages viewers, and elevates the broadcast experience." },
+  { title: "Emcee Services", desc: "Our professional emcees host and anchor events with energy, clarity, and audience engagement, elevating brand presence across live shows, launches, and activations." },
+  { title: "Production", desc: "We handle complete media production, from concept and planning to execution, delivering high-quality visual content tailored for digital, broadcast, and on-ground platforms." },
+  { title: "Broadcasting", desc: "We specialize in live and recorded broadcasting, covering events with seamless production, real-time streaming, and technical precision across multiple platforms." },
+  { title: "Campus Tours & Brand Activations", desc: "We design and execute college campus tours and on-ground activations for brands, creating immersive experiences that drive awareness, engagement, and recall among young audiences." },
+  { title: "Social Media Marketing", desc: "We build and manage data-driven social media strategies, producing content that increases visibility, engagement, and brand growth across all major platforms." },
 ];
 
 const Index = () => {
@@ -36,7 +35,7 @@ const Index = () => {
       {/* Hero */}
       <section className="relative h-screen flex items-end overflow-hidden  text-center">
         <div className="absolute inset-0">
-          {/* <img src={heroBg} alt="Production studio" className="w-full h-full object-cover" /> */}
+          <img src={heroBg} alt="Production studio" className="w-full h-full object-cover" />
           <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
           <div className="absolute inset-0 bg-background/50" />
         </div>
@@ -46,12 +45,12 @@ const Index = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
           >
-            <span className="font-body text-xs tracking-[0.4em] uppercase text-primary mb-4 mr-10 block font-medium ">
-              Production · Media · Broadcasting 
-            </span>
+            <p className="font-body text-xs tracking-[0.4em] uppercase mb-4 mr-10 block font-medium ">
+              Production <DotIcon className="inline-block size-8 text-[#F77325]" /> Media <DotIcon className="inline-block size-8 text-[#30C0E5]" /> Broadcasting
+            </p>
             <h1 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-foreground leading-[0.9] max-w-5xl">
               WE BRING {" "}
-              <span className="text-gradient">STORIES</span> <br/>TO 
+              <span className="text-gradient">STORIES</span> <br />TO
               THE SCREEN
             </h1>
             <div className="flex justify-center items-center">
@@ -69,6 +68,8 @@ const Index = () => {
         </div>
       </section>
 
+      <ClientCarousel />
+
       {/* Featured Work */}
       <section className="section-padding max-w-7xl mx-auto">
         <SectionHeading label="Featured Work" title="SELECTED PROJECTS" />
@@ -80,16 +81,17 @@ const Index = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="group relative aspect-square overflow-hidden cursor-pointer"
+              className="group  aspect-square  cursor-pointer"
             >
               <img
                 src={project.img}
                 alt={project.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-background/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
-                <span className="text-xs tracking-[0.3em] uppercase text-primary">{project.category}</span>
+              <div className=" inset-0 bg-background/70  duration-500 flex flex-col justify-end py-6 gap-2">
                 <span className="font-display text-2xl text-foreground mt-1">{project.title}</span>
+                <span className="text-xs ">{project.description}</span>
+                <span className="text-xs text-primary">{project.client}</span>
               </div>
             </motion.div>
           ))}
@@ -144,7 +146,6 @@ const Index = () => {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="glass-card p-8 text-center group hover:border-primary/30 transition-colors duration-500"
               >
-                <service.icon className="mx-auto mb-4 text-primary" size={32} strokeWidth={1.5} />
                 <h3 className="font-display text-xl text-foreground mb-2">{service.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{service.desc}</p>
               </motion.div>
@@ -153,31 +154,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section-padding">
-        <div className="max-w-7xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <h2 className="font-display text-4xl md:text-6xl lg:text-7xl text-foreground mb-6">
-              READY TO CREATE<br />
-              <span className="text-gradient">SOMETHING BOLD?</span>
-            </h2>
-            <p className="text-muted-foreground text-base md:text-lg max-w-lg mx-auto mb-8">
-              Let's talk about your next project. We're ready when you are.
-            </p>
-            <Link
-              to="/contact"
-              className="inline-block font-body text-sm tracking-widest uppercase px-8 py-4 bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
-            >
-              Get in Touch
-            </Link>
-          </motion.div>
-        </div>
-      </section>
+      <CTABanner />
 
       <Footer />
     </div>
